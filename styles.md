@@ -1,3 +1,3 @@
 # Styles
-- secondary_bg: #242323
-- primary_color: #FD7400
+- secondary_bg: #262626
+- primary_color: #4cbbe5

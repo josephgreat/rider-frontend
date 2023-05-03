@@ -1,13 +1,21 @@
 <script setup>
-import LandingPage from './components/pages/LandingPage.vue'
+import LandingPage from './components/pages/LandingPage.vue';
 </script>
 
 <template>
   <LandingPage />
 </template>
 
-<style scoped>
-  *{
-    color: #262626;
-  }
+<style>
+* {
+  color: #262626;
+}
+
+.primary {
+  color: #4cbbe5;
+}
+
+.primary_bg {
+  background: #4cbbe5;
+}
 </style>
