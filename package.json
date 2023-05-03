@@ -2,6 +2,7 @@
   "name": "rjet-frontend",
   "private": true,
   "version": "0.0.0",
+  "main": "main.js",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.47"
+    "vue": "^3.2.26"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.1.0",

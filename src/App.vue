@@ -1,10 +1,13 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import LandingPage from './components/pages/LandingPage.vue'
 </script>
 
 <template>
-  <HelloWorld msg="RiderJet App" />
+  <LandingPage />
 </template>
 
 <style scoped>
+  *{
+    color: #262626;
+  }
 </style>
