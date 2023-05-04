@@ -4,8 +4,8 @@
     import Promote from '../landingpage/Promote.vue';
     import Features from '../landingpage/Features.vue';
     import Services from '../landingpage/Services.vue';
-
-    import Footer from '../landingpage/Footer.vue'; 
+    import Clients from '../landingpage/Clients.vue';
+    import Footer from '../landingpage/Footer.vue';
 </script>
 
 <template>
@@ -13,8 +13,9 @@
     <LandingJumbotron/>
     <Promote/>
     <Features/>
-    <Services />
-    <Footer />
+    <Services/>
+    <Clients/>
+    <Footer/>
 </template>
 
 <style scoped></style>
