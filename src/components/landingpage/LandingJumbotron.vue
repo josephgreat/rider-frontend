@@ -8,8 +8,8 @@
                 alt="riderjet logo">
             <img src="../../assets/bg/truck.png" class="w-full" alt="truck_image">
         </div>
-        <div class="flex flex-col md:flex-row justify-between mb-8 items-center">
-            <h1 class="text-[3rem] mb-4 md:text-[4rem] leading-[3.5rem] md:leading-[4rem] font-semibold">We will
+        <div class="flex flex-col md:flex-row justify-between mb-8 md:items-center">
+            <h1 class="text-[3rem] mb-4 md:text-[4rem] font-semibold">We will
                 <span class="primary">Deliver</span>
                 your
                 <span class="primary">Package</span>
@@ -18,11 +18,11 @@
                 world, your
                 package must be safe</p>
         </div>
-        <button class="bg-[#4cbbe5] mb-8 text-white px-4 py-2 rounded-3xl">Get in touch</button>
+        <button class="primary_bg mb-8 text-white px-4 py-2 rounded-3xl">Get in touch</button>
         <ul>
-            <li class="primary mb-4">
-                <h2 class="text-[2rem] md:text-[2.5rem] font-semibold">10+</h2>
-                <p>Years Experience</p>
+            <li class="mb-4">
+                <h2 class="primary text-[2rem] md:text-[2.5rem] font-semibold">10+</h2>
+                <p class="primary">Years Experience</p>
             </li>
             <li class="mb-4">
                 <h2 class="text-[2rem] md:text-[2.5rem] font-semibold">18k+</h2>
