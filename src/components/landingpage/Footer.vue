@@ -46,16 +46,16 @@
                         <li class="w-1/2 sm:w-1/3 mb-4">
                             <ul>
                                 <li class="mb-2">
-                                    <a href="#">INSTAGRAM</a>
+                                    <a href="#" class="fa fa-instagram" aria-label="INSTAGRAM"></a>
                                 </li>
                                 <li class="mb-2">
-                                    <a href="#">FACEBOOK</a>
+                                    <a href="#" class="fa fa-facebook" aria-label="facebook"></a>
                                 </li>
                                 <li class="mb-2">
-                                    <a href="#">TWITTER</a>
+                                    <a href="#" class="fa fa-twitter" aria-label="Twitter"></a>
                                 </li>
                                 <li class="mb-2">
-                                    <a href="#">EMAIL</a>
+                                    <a href="#" class="fa fa-envelope" aria-label="Email"></a>
                                 </li>
                             </ul>
                         </li>
