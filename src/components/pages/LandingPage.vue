@@ -5,6 +5,7 @@
     import Features from '../landingpage/Features.vue';
     import Services from '../landingpage/Services.vue';
     import Clients from '../landingpage/Clients.vue';
+    import Testimonies from '../landingpage/Testimonies.vue';
     import Footer from '../landingpage/Footer.vue';
 </script>
 
@@ -16,7 +17,8 @@
         <Features/>
         <Services/>
         <Clients/>
-        <Footer/>
+        <Testimonies/>
+        <Footer />
     </div>
 </template>
 
