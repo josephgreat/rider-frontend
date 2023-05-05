@@ -27,11 +27,11 @@
     let swipeRight = () => {
         clearTimeout(interval);
         if (testimonies.value.length % 2 === 0) {
-            if (currentIndex.value >= testimonies.value.length / divider) {
+            if (currentIndex.value > testimonies.value.length / divider) {
                 currentIndex.value = 0;
             }
         } else {
-            if (currentIndex.value >= (testimonies.value.length + 1) / divider) {
+            if (currentIndex.value > (testimonies.value.length + 1) / divider) {
                 currentIndex.value = 0;
             }
         }
@@ -43,11 +43,11 @@
     let swipeLeft = () => {
         clearTimeout(interval);
         if (testimonies.value.length % 2 === 0) {
-            if (currentIndex.value <= 0) {
+            if (currentIndex.value < 0) {
                 currentIndex.value = testimonies.value.length/divider;
             }
         } else {
-            if (currentIndex.value <= 0) {
+            if (currentIndex.value < 0) {
                 currentIndex.value = (testimonies.value.length+1)/divider;
             }
         }
