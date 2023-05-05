@@ -2,7 +2,7 @@
 </script>
 <template>
     <div class="relative max-w-[72rem] mx-auto px-3 mb-12 sm:px-10 py-10">
-        <div class="absolute -z-10 w-2/3 h-fit bottom-[10%] md:bottom-0 right-0 ">
+        <div class="absolute w-2/3 h-fit bottom-[10%] md:bottom-0 right-0 ">
             <img src="../../assets/logo/vector/default-monochrome.svg"
                 class="absolute top-[30%] -translate-x-[50%] -translate-y-[30%] rotate-y w-3/6 left-[50%]"
                 alt="riderjet logo">

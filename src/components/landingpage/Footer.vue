@@ -1,6 +1,6 @@
 <script></script>
 <template>
-    <div class="bg-[#262626] rounded-t-[3rem]">
+    <footer class="bg-[#262626] rounded-t-[3rem]">
         <div class="max-w-[72rem] mx-auto px-3  sm:px-10">
             <div
                 class="flex flex-col sm:flex-row py-10 md:gap-10 gap-2 mb-10 border-b border-[#464646] sm:items-center sm:justify-between font-semibold">
@@ -76,7 +76,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </footer>
 </template>
 
 <style scoped>

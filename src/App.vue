@@ -3,12 +3,15 @@ import LandingPage from './components/pages/LandingPage.vue';
 </script>
 
 <template>
-  <LandingPage />
+  <div class="text-[#262626] dark:text-[#fff]">
+    <LandingPage />
+
+  </div>
 </template>
 
 <style>
 * {
-  color: #262626;
+  font-family: 'Poppins', sans-serif;
 }
 
 .primary {
@@ -20,5 +23,9 @@ import LandingPage from './components/pages/LandingPage.vue';
 }
 .bg-gradient {
     background: repeating-linear-gradient(-30deg, #4cbce5 5%, #262626 );
+}
+@keyframes smoothdrop {
+  from{top: -1rem}
+  to{top: 0}
 }
 </style>

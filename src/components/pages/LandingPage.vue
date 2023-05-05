@@ -9,13 +9,15 @@
 </script>
 
 <template>
-    <Navbar/>
-    <LandingJumbotron/>
-    <Promote/>
-    <Features/>
-    <Services/>
-    <Clients/>
-    <Footer/>
+    <div class="transition-[all .3s ease]">
+        <Navbar/>
+        <LandingJumbotron/>
+        <Promote/>
+        <Features/>
+        <Services/>
+        <Clients/>
+        <Footer/>
+    </div>
 </template>
 
 <style scoped></style>

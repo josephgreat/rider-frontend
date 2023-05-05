@@ -13,12 +13,12 @@
                 <div class="bg-white px-5 py-2 rounded-full inline-block mb-24"><i class="fa fa-globe primary"></i></div>
                 <h4 class="text-white">Worldwide Shipping</h4>
             </li>
-            <li class="text-[2rem] font-semibold bg-gray-200 px-6 py-10 rounded-[3rem] mb-4">
-                <div class="bg-white px-4 py-2 rounded-full inline-block mb-24"><i class="fa fa-car"></i></div>
+            <li class="text-[2rem] font-semibold dark:bg-[#323232] bg-gray-200 px-6 py-10 rounded-[3rem] mb-4">
+                <div class="bg-white px-4 py-2 rounded-full inline-block mb-24"><i class="fa fa-car dark:text-[#262626]"></i></div>
                 <h4>Ground Shipping</h4>
             </li>
-            <li class="text-[2rem] font-semibold bg-gray-200 px-6 py-10 rounded-[3rem] mb-4">
-                <div class="bg-white px-4 py-2 rounded-full inline-block mb-24"><i class="fa fa-ship"></i></div>
+            <li class="text-[2rem] font-semibold dark:bg-[#323232] bg-gray-200 px-6 py-10 rounded-[3rem] mb-4">
+                <div class="bg-white px-4 py-2 rounded-full inline-block mb-24"><i class="fa fa-ship dark:text-[#262626]"></i></div>
                 <h4>Sea Shipping</h4>
             </li>
         </ul>

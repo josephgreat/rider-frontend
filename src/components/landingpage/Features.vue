@@ -11,11 +11,11 @@
             with Riderjet, guaranteed fast!</p>
     </div>
         <div class="grid md:grid-cols-[1.3fr_1.3fr_2fr] gap-5 mb-5 mt-10">
-            <div class="bg-gray-200 rounded-[3rem] px-6 py-10 ">
+            <div class="bg-gray-200 dark:bg-[#323232] rounded-[3rem] px-6 py-10 ">
                 <h5 class="font-semibold text-[1.5rem] leading-[1.2] mb-4">Real Time Tracking</h5>
                 <p>you can track your package anytime and anywhere</p>
             </div>
-            <div class="bg-gray-200 rounded-[3rem] px-6 py-10">
+            <div class="bg-gray-200 dark:bg-[#323232] rounded-[3rem] px-6 py-10">
                 <h5 class="font-semibold text-[1.5rem] leading-[1.2] mb-4">Packaging</h5>
                 <p>we use quality packaging for the safety of your goods</p>
             </div>
@@ -26,16 +26,16 @@
             </div>
         </div>
         <div class="grid md:grid-cols-[2fr_1.3fr_1.3fr] gap-5">
-            <div class="bg-gray-200 rounded-[3rem] px-6 py-10">
+            <div class="bg-gray-200 dark:bg-[#323232] rounded-[3rem] px-6 py-10">
                 <h5 class="font-semibold text-[1.5rem] leading-[1.2] mb-4">Insurance Services</h5>
                 <p>we will provide insurance if your item is damaged on transfer. So don't worry if yor item is damaged
                     because we will take care of it</p>
             </div>
-            <div class="bg-gray-200 rounded-[3rem] px-6 py-10">
+            <div class="bg-gray-200 dark:bg-[#323232] rounded-[3rem] px-6 py-10">
                 <h5 class="font-semibold text-[1.5rem] leading-[1.2] mb-4">Pick up Delivery</h5>
                 <p>we will pick up your package at home. Wait there, we'll be there!</p>
             </div>
-            <div class="bg-gray-200 rounded-[3rem] px-6 py-10">
+            <div class="bg-gray-200 dark:bg-[#323232] rounded-[3rem] px-6 py-10">
                 <h5 class="font-semibold text-[1.5rem] leading-[1.2] mb-4">24 Hours</h5>
                 <p>we will send your package non-stop so that it arrives quickly</p>
             </div>
