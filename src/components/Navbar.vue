@@ -125,7 +125,7 @@
             <div
                 class="absolute flex flex-col top-[4.9rem]  transition-all duration-300 rounded-b-3xl right-2 bg-gray-200 dark:bg-[#323232] px-4 py-2">
                 <div
-                    class="inline-block ml-auto cursor-pointer hover:scale-125 transition-all origin-center duration-300"
+                    class="inline-block hover:rotate-[360deg] ml-auto cursor-pointer hover:scale-125 transition-all origin-center duration-300"
                     @click="toggleTheme">
                     <i class="fa" :class="theme === 'dark' ? 'fa-moon-o' : 'fa-sun-o'"></i>
                 </div>

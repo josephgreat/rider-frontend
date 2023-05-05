@@ -16,34 +16,64 @@
         }
     ]);
     let currentIndex = ref(0);
-    let testimoniesElem;
+    let testimoniesElem,
+        interval,
+        divider,
+        add;
 
     let swipe = () => {
-        testimoniesElem.scroll(currentIndex.value * (testimoniesElem.clientWidth + 20), 0);
+        testimoniesElem.scroll((currentIndex.value * (testimoniesElem.clientWidth + add)) / divider, 0);
     };
     let swipeRight = () => {
-        clearInterval(swipeRight);
-
-        if (currentIndex.value >= testimonies.value.length) 
-            currentIndex.value = 0;
-        currentIndex.value++;
+        clearTimeout(interval);
+        if (testimonies.value.length % 2 === 0) {
+            if (currentIndex.value >= testimonies.value.length / divider) {
+                currentIndex.value = 0;
+            }
+        } else {
+            if (currentIndex.value >= (testimonies.value.length + 1) / divider) {
+                currentIndex.value = 0;
+            }
+        }
         swipe();
+        currentIndex.value++;
+        interval = setTimeout(swipeRight, 5000);
 
     };
     let swipeLeft = () => {
-        clearInterval(swipeRight);
-
-        if (currentIndex.value == 0) 
-            currentIndex.value = testimonies.value.length -1;
+        clearTimeout(interval);
+        if (testimonies.value.length % 2 === 0) {
+            if (currentIndex.value <= 0) {
+                currentIndex.value = testimonies.value.length/divider;
+            }
+        } else {
+            if (currentIndex.value <= 0) {
+                currentIndex.value = (testimonies.value.length+1)/divider;
+            }
+        }
         currentIndex.value--;
         swipe();
-
+        interval = setTimeout(swipeRight, 5000);
     };
     onMounted(() => {
         testimoniesElem = document.querySelector('.testimonies');
         window.onload = () => {
-            setInterval(swipeRight, 2500);
+            interval = setTimeout(swipeRight, 5000);
+            divider = window.innerWidth >= 768
+                ? 2
+                : 1;
+            add = window.innerWidth >= 768
+                ? 0
+                : 20;
         };
+        window.onresize = () => {
+            divider = window.innerWidth >= 768
+                ? 2
+                : 1;
+            add = window.innerWidth >= 768
+                ? 0
+                : 20;
+        }
 
     });
 </script>
@@ -53,7 +83,7 @@
             <button class="fa fa-arrow-left" @click="swipeLeft"></button>
             <ul class="flex gap-5 testimonies scroll-smooth overflow-x-hidden w-3/4 ">
                 <li
-                    class="flex-shrink-0 shadow-[inset_0_0px_5px_0px]  bg-gray-200 dark:bg-[#323232] rounded-[3rem] px-7 py-5 w-full relative "
+                    class="flex-shrink-0  bg-gray-200 dark:bg-[#323232] rounded-[3rem] px-7 py-5 w-full md:w-[calc(50%-20px)] relative "
                     v-for="(testimony, index) in testimonies"
                     :key="index">
                     <blockquote
