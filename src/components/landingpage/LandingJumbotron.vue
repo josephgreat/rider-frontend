@@ -10,7 +10,7 @@
         </div> -->
         <div class="flex flex-col md:flex-row justify-between md:mb-[6rem] md:items-center">
             <div class="mb-6">
-                <h1 class="text-[2.5rem] mb-4 md:text-[4rem] font-semibold dark:text-[#ffffffb3] text-[#333333] leading-[3.5rem] tracking-wider"><span class="md:block">We will
+                <h1 class="text-[2.5rem] mb-4 md:text-[4rem] font-semibold dark:text-[#ffffffb3] text-[#333333] leading-[3.5rem] tracking-wider"><span class="block">We will
                     <span class="primary">Deliver</span></span> your
                     <span class="primary">Package!</span>
                 </h1>
