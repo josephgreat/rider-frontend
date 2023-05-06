@@ -9,9 +9,9 @@
             <img src="../../assets/bg/truck.png" class="w-full" alt="truck_image">
         </div> -->
         <div class="flex flex-col md:flex-row justify-between md:mb-[6rem] md:items-center">
-            <div>
-                <h1 class="text-[2.5rem] mb-4 md:text-[4rem] font-semibold dark:text-[#ffffffb3] text-[#333333] leading-[3.5rem] tracking-wider"><span class="block">We will
-                    <span class="primary">Deliver</span></span>your
+            <div class="mb-6">
+                <h1 class="text-[2.5rem] mb-4 md:text-[4rem] font-semibold dark:text-[#ffffffb3] text-[#333333] leading-[3.5rem] tracking-wider"><span class="md:block">We will
+                    <span class="primary">Deliver</span></span> your
                     <span class="primary">Package!</span>
                 </h1>
                  <button class="py-2 md:my-8 dark:text-[#ffffffb3] text-[#333333] px-4 mb-2 rounded-3xl hover:bg-[#4cbbe5] hover:border-[1px] border-[1px] border-cyan-300">Get in touch</button>
