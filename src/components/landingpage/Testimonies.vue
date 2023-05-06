@@ -51,8 +51,8 @@
                 currentIndex.value = (testimonies.value.length+1)/divider;
             }
         }
-        currentIndex.value--;
         swipe();
+        currentIndex.value--;
         interval = setTimeout(swipeRight, 5000);
     };
     onMounted(() => {

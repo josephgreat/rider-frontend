@@ -1,5 +1,5 @@
 <script setup>
-    import Navbar from '../Navbar.vue';
+    import Navbar from '../landingpage/Navbar.vue';
     import LandingJumbotron from '../landingpage/LandingJumbotron.vue';
     import Promote from '../landingpage/Promote.vue';
     import Features from '../landingpage/Features.vue';
