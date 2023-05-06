@@ -65,7 +65,7 @@
                                     <a href="#">PRIVACY POLICY</a>
                                 </li>
                                 <li class="mb-2">
-                                    <a href="#">FArrrrQ</a>
+                                    <a href="#">FArrr33rQ</a>
                                 </li>
                                 <li class="mb-2">
                                     <a href="#">TERMS & CONDITIONS</a>
