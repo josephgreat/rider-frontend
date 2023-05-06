@@ -1,7 +1,8 @@
 <script setup>
     import {onMounted, onUnmounted, ref} from 'vue';
 
-    const openNav = ref(window.innerWidth < 640
+    const isSmallScreen = ref(window.innerWidth < 640);
+    const openNav = ref(isSmallScreen.value
         ? false
         : true);
 
@@ -9,7 +10,8 @@
         ? true
         : false);
     const theme = ref(localStorage.getItem('theme'));
-    function toogleNav() {
+    const openAuth = ref(false);
+    function toggleNav() {
         openNav.value = !openNav.value;
     }
     function toggleTheme() {
@@ -26,39 +28,44 @@
             theme.value = 'light';
         }
     }
+    function toggleAuth() {
+        openAuth.value = !openAuth.value;
+    }
+    function themeUpdate() {
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document
+                .documentElement
+                .classList
+                .add('dark');
+            localStorage.setItem('theme', 'dark');
+            theme.value = 'dark';
+
+        } else {
+            document
+                .documentElement
+                .classList
+                .remove('dark');
+            localStorage.setItem('theme', 'light');
+            theme.value = 'light';
+        }
+    }
     onMounted(() => {
         window.addEventListener('resize', () => {
-            openNav.value = window.innerWidth > 640
-                ? true
-                : false;
+            isSmallScreen.value = window.innerWidth < 640;
+            openNav.value = isSmallScreen.value
+                ? false
+                : true;
         });
         window.addEventListener('scroll', () => {
             stickyNav.value = window.scrollY > 200
                 ? true
                 : false;
         });
-        window.addEventListener('load', () => {
-            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                document
-                    .documentElement
-                    .classList
-                    .add('dark');
-                localStorage.setItem('theme', 'dark');
-                theme.value = 'dark';
-
-            } else {
-                document
-                    .documentElement
-                    .classList
-                    .remove('dark');
-                localStorage.setItem('theme', 'light');
-                theme.value = 'light';
-            }
-        });
+        window.addEventListener('load', themeUpdate);
     });
     onUnmounted(() => {
         window.removeEventListener('resize', () => {
-            openNav.value = window.innerWidth > 640
+            openNav.value = !isSmallScreen
                 ? true
                 : false;
         });
@@ -67,6 +74,8 @@
                 ? true
                 : false;
         });
+        window.removeEventListener('load', themeUpdate);
+
     });
 </script>
 
@@ -77,7 +86,7 @@
         <div class="max-w-[72rem] mx-auto relative px-3 sm:px-10 ">
             <nav class="flex justify-between items-center py-5 relative">
                 <div class="flex ">
-                    <button class="w-8 sm:hidden " @click="toogleNav">
+                    <button class="w-8 sm:hidden " @click="toggleNav">
                         <span
                             class="w-5 h-[2px] bg-[#4cbbe5] block mb-1 transition-all duration-300 ease-in-out"
                             :class="openNav ? 'translate-x-[5px]' : ''"></span>
@@ -88,13 +97,13 @@
                     <div>
                         <img
                             class="w-full max-w-[7rem] md:max-w-[10rem]"
-                            v-if="theme==='dark'"
-                            src="../assets/logo/vector/default-monochrome-white.svg"                            
+                            v-if="theme === 'dark'"
+                            src="../../assets/logo/vector/default-monochrome-white.svg"
                             alt="Riderjet logo"/>
                         <img
                             class="w-full max-w-[7rem] md:max-w-[10rem]"
                             v-else
-                            src="../assets/logo/vector/default-monochrome.svg"                            
+                            src="../../assets/logo/vector/default-monochrome.svg"
                             alt="Riderjet logo"/>
                     </div>
                 </div>
@@ -114,23 +123,39 @@
                         href="#"
                         class="block p-2 sm:p-0 w-full sm:w-auto before:absolute before:w-full before:rounded-[5rem] before:h-1 overflow-hidden before:bg-[#4cbbe5] before:-bottom-1 relative hover:before:bottom-0">Offices</a>
                 </div>
-                <div>
-                    <button>
+                <div class="flex items-center gap-4">
+                    <button @click="toggleAuth" class="relative">
                         <a
                             href="#"
                             class="block px-3 pb-[.5rem] pt-[.3rem] border-[#4cbbe5] text-[#4cbbe5] border rounded-3xl">Order Now</a>
+                        <ul
+                            class="absolute top-[63%] dark:bg-[#121212] bg-white z-20 shadow w-full px-5 py-4 transition-all duration-500 border-[#4cbbe5] border border-t-0 rounded-b-full"
+                            :class="openAuth ? 'showmenu' : 'closemenu'">
+                            <li class="mb-2 primary">
+                                <a href="#">Register</a>
+                            </li>
+                            <li class="mb-2 primary">
+                                <a href="#">Sign In</a>
+                            </li>
+                        </ul>
                     </button>
+                    <div
+                        v-if="isSmallScreen"
+                        class="absolute flex flex-col top-[4.9rem]  transition-all duration-300 rounded-b-3xl right-2 bg-gray-200 dark:bg-[#323232] px-4 py-2">
+                        <div
+                            class="inline-block hover:rotate-[360deg] ml-auto cursor-pointer hover:scale-125 transition-all origin-center duration-300"
+                            @click="toggleTheme">
+                            <i class="fa" :class="theme === 'dark' ? 'fa-moon-o' : 'fa-sun-o'"></i>
+                        </div>
+                    </div>
+                    <div
+                        v-else
+                        class="inline-block hover:rotate-[360deg] ml-auto cursor-pointer hover:scale-125 transition-all origin-center duration-300"
+                        @click="toggleTheme">
+                        <i class="fa text-xl" :class="theme === 'dark' ? 'fa-moon-o' : 'fa-sun-o'"></i>
+                    </div>
                 </div>
             </nav>
-            <div
-                class="absolute flex flex-col top-[4.9rem]  transition-all duration-300 rounded-b-3xl right-2 bg-gray-200 dark:bg-[#323232] px-4 py-2">
-                <div
-                    class="inline-block hover:rotate-[360deg] ml-auto cursor-pointer hover:scale-125 transition-all origin-center duration-300"
-                    @click="toggleTheme">
-                    <i class="fa" :class="theme === 'dark' ? 'fa-moon-o' : 'fa-sun-o'"></i>
-                </div>
-
-            </div>
         </div>
     </div>
 </template>
