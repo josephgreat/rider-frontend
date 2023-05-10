@@ -15,7 +15,7 @@ currentYear =  new Date().getFullYear()
                     <span class="primary">shipping</span>
                     your goods!
                 </h3>
-                <div class="w-fit bg-[#464646] order-1 sm:order-2 rounded-[2rem] h-fit px-8 py-4 hover:to-[#2f4750] hover:border-[1px] border-cyan-300">
+                <div class="w-fit bg-[#464646] order-1 sm:order-2 rounded-[2rem] h-fit px-8 py-4 hover:to-[#2f4750] hover:border-[1px] border-[#4cbbe5]">
                     <i class="fa fa-level-up rotate-45 primary text-[3rem] md:text-[4rem]"></i>
                 </div>
             </div>

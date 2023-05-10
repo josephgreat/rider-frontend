@@ -14,8 +14,8 @@
                     company carry out
                     your package delivery</p>
                 <div>
-                    <button class="px-4 py-2 mb-2 border mr-4 rounded-[3rem] hover:bg-[#4cbbe5] hover:border-[1px] border-cyan-300">GET IN TOUCH</button>
-                    <button class="px-4 py-2 border rounded-[3rem] hover:bg-[#4cbbe5] hover:border-[1px] border-cyan-300"><i class="fa fa-play-circle"></i> Watch Video</button>
+                    <button class="px-4 py-2 mb-2 border mr-4 rounded-[3rem] hover:bg-[#4cbbe5] hover:border-[1px] border-[#4cbbe5]">GET IN TOUCH</button>
+                    <button class="px-4 py-2 border rounded-[3rem] hover:bg-[#4cbbe5] hover:border-[1px] border-[#4cbbe5]"><i class="fa fa-play-circle"></i> Watch Video</button>
                 </div>
     
             </div>
