@@ -62,6 +62,7 @@
                 : false;
         });
         window.addEventListener('load', themeUpdate);
+
     });
     onUnmounted(() => {
         window.removeEventListener('resize', () => {
@@ -96,7 +97,7 @@
                     </button>
                     <div>
                         <img
-                            class="w-full max-w-[7rem] md:max-w-[10rem]"
+                            class="w-full max-w-[7rem] md:max-w-[10rem] opacity-70"
                             v-if="theme === 'dark'"
                             src="../../assets/logo/vector/default-monochrome-white.svg"
                             alt="Riderjet logo"/>
@@ -108,49 +109,50 @@
                     </div>
                 </div>
                 <div
-                    class="flex flex-col transition-all z-10 duration-500 ease-in-out sm:relative w-1/2 absolute top-[75%] rounded-tr-2xl rounded-bl-2xl left-3 sm:left-0 sm:bottom-0 bg-[#4cbbe5] text-white sm:bg-transparent dark:sm:text-white sm:text-[#262626] sm:flex-row justify-between sm:w-2/5"
+                    class="flex flex-col transition-all z-10 duration-500 ease-in-out sm:relative w-1/2 absolute top-[75%] rounded-tr-2xl rounded-bl-2xl left-3 sm:left-0 sm:bottom-0 bg-[#4cbbe5] sm:bg-transparent dark:text-[#ffffffb3] text-[#333333] sm:flex-row justify-between sm:w-2/5"
                     :class="openNav ? 'showmenu' : 'closemenu'">
                     <a
                         href="#"
-                        class="block p-2 sm:p-0 w-full sm:w-auto before:absolute before:w-full before:rounded-[5rem] before:h-1 overflow-hidden before:bg-[#4cbbe5] before:-bottom-1 relative hover:before:bottom-0">Home</a>
+                        class="block p-2 sm:p-0 tracking-wider w-full sm:w-auto before:absolute before:w-full before:rounded-[5rem] before:h-1 overflow-hidden before:bg-[#4cbbe5] before:-bottom-1 relative hover:before:bottom-0">Home</a>
                     <a
                         href="#"
-                        class="block p-2 sm:p-0 w-full sm:w-auto before:absolute before:w-full before:rounded-[5rem] before:h-1 overflow-hidden before:bg-[#4cbbe5] before:-bottom-1 relative hover:before:bottom-0">About</a>
+                        class="block p-2 sm:p-0 tracking-wider  w-full sm:w-auto before:absolute before:w-full before:rounded-[5rem] before:h-1 overflow-hidden before:bg-[#4cbbe5] before:-bottom-1 relative hover:before:bottom-0">About</a>
                     <a
                         href="#"
-                        class="block p-2 sm:p-0 w-full sm:w-auto before:absolute before:w-full before:rounded-[5rem] before:h-1 overflow-hidden before:bg-[#4cbbe5] before:-bottom-1 relative hover:before:bottom-0">Services</a>
+                        class="block p-2 sm:p-0 tracking-wider  w-full sm:w-auto before:absolute before:w-full before:rounded-[5rem] before:h-1 overflow-hidden before:bg-[#4cbbe5] before:-bottom-1 relative hover:before:bottom-0">Careers</a>
                     <a
                         href="#"
-                        class="block p-2 sm:p-0 w-full sm:w-auto before:absolute before:w-full before:rounded-[5rem] before:h-1 overflow-hidden before:bg-[#4cbbe5] before:-bottom-1 relative hover:before:bottom-0">Offices</a>
+                        class="block p-2 sm:p-0 tracking-wider  w-full sm:w-auto before:absolute before:w-full before:rounded-[5rem] before:h-1 overflow-hidden before:bg-[#4cbbe5] before:-bottom-1 relative hover:before:bottom-0">Offices</a>
                 </div>
                 <div class="flex items-center gap-4">
                     <button @click="toggleAuth" class="relative">
                         <a
                             href="#"
-                            class="block px-3 pb-[.5rem] pt-[.3rem] border-[#4cbbe5] text-[#4cbbe5] border rounded-3xl">Order Now</a>
+                            class="block px-3 pb-[.45rem] pt-[.3rem] border-[#4cbbe5] text-[#4cbbe5] border rounded-3xl">Order Now</a>
                         <ul
                             class="absolute top-[63%] dark:bg-[#121212] bg-white z-20 shadow w-full px-5 py-4 transition-all duration-500 border-[#4cbbe5] border border-t-0 rounded-b-full"
                             :class="openAuth ? 'showmenu' : 'closemenu'">
-                            <li class="mb-2 primary">
+                            <li class="mb-2 primary hover:border-b-[1px] border-cyan-300">
                                 <a href="#">Register</a>
                             </li>
-                            <li class="mb-2 primary">
+                            <li class="mb-2 primary hover:border-b-[1px] border-cyan-300">
                                 <a href="#">Sign In</a>
                             </li>
                         </ul>
                     </button>
+                    <span v-if="!isSmallScreen" class="dark:sm:text-[#ffffffb3]">|</span>
                     <div
                         v-if="isSmallScreen"
-                        class="absolute flex flex-col top-[4.9rem]  transition-all duration-300 rounded-b-3xl right-2 bg-gray-200 dark:bg-[#323232] px-4 py-2">
+                        class="absolute flex flex-col top-[4.9rem]  transition-all duration-300 rounded-b-3xl right-0 bg-gray-200 dark:bg-[#323232] px-4 py-2">
                         <div
-                            class="inline-block hover:rotate-[360deg] ml-auto cursor-pointer hover:scale-125 transition-all origin-center duration-300"
+                            class="inline-block hover:rotate-[360deg] ml-auto cursor-pointer hover:scale-125 transition-all origin-center duration-300 dark:text-[#ffffffb3]"
                             @click="toggleTheme">
                             <i class="fa" :class="theme === 'dark' ? 'fa-moon-o' : 'fa-sun-o'"></i>
                         </div>
                     </div>
                     <div
                         v-else
-                        class="inline-block hover:rotate-[360deg] ml-auto cursor-pointer hover:scale-125 transition-all origin-center duration-300"
+                        class="inline-block hover:rotate-[360deg] ml-auto cursor-pointer hover:scale-125 transition-all origin-center duration-300 dark:sm:text-[#ffffffb3]"
                         @click="toggleTheme">
                         <i class="fa text-xl" :class="theme === 'dark' ? 'fa-moon-o' : 'fa-sun-o'"></i>
                     </div>

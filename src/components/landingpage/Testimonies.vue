@@ -5,13 +5,13 @@
             witness: 'John Doe',
             story: 'I ordered something from shoprite, used riderjet and got the delivery speedily'
         }, {
-            witness: 'John Doe',
+            witness: 'christ Doe',
             story: 'I ordered something from shoprite, used riderjet and got the delivery speedily'
         }, {
-            witness: 'John Doe',
+            witness: 'amada b',
             story: 'I ordered something from shoprite, used riderjet and got the delivery speedily'
         }, {
-            witness: 'John Doe',
+            witness: 'onyinye',
             story: 'I ordered something from shoprite, used riderjet and got the delivery speedily'
         }
     ]);
@@ -79,9 +79,12 @@
 </script>
 <template>
     <div class="max-w-[72rem] mx-auto px-3 mb-12 sm:px-10 py-10 relative">
+        <h3
+            class="text-center md:text-[2.5rem] capitalize mb-4 text-[2rem] dark:text-[#ffffffb3] text-[#333333]">
+            our <span class="primary">satisfied </span> customers!</h3>
         <div class="flex justify-between">
-            <button class="fa fa-arrow-left" @click="swipeLeft"></button>
-            <ul class="flex gap-5 testimonies scroll-smooth overflow-x-hidden w-3/4 ">
+            <button class="fa fa-arrow-left hover:text-[#4cbbe5]" @click="swipeLeft"></button>
+            <ul class="flex gap-5 testimonies scroll-smooth overflow-x-hidden w-3/4 dark:text-[#ffffffb3] text-[#333333]">
                 <li
                     class="flex-shrink-0  bg-gray-200 dark:bg-[#323232] rounded-[3rem] px-7 py-5 w-full md:w-[calc(50%-20px)] relative "
                     v-for="(testimony, index) in testimonies"
@@ -93,8 +96,7 @@
                     <cite class="flex justify-end">{{ testimony.witness }}</cite>
                 </li>
             </ul>
-            <button class="fa fa-arrow-right" @click="swipeRight"></button>
-
+            <button class="fa fa-arrow-right hover:text-[#4cbbe5]" @click="swipeRight"></button>
         </div>
     </div>
 </template>
