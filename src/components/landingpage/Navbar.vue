@@ -62,6 +62,10 @@
                 : false;
         });
         window.addEventListener('load', themeUpdate);
+        window.addEventListener('click', e => {
+            if(!e.target.classList.contains('nav_toggle') && openNav.value && isSmallScreen.value) openNav.value = !openNav.value
+            else if(!e.target.classList.contains('auth_toggle') && openAuth.value && isSmallScreen.value) openAuth.value = !openAuth.value
+        })
 
     });
     onUnmounted(() => {
@@ -87,12 +91,12 @@
         <div class="max-w-[72rem] mx-auto relative px-3 sm:px-10 ">
             <nav class="flex justify-between items-center py-5 relative">
                 <div class="flex ">
-                    <button class="w-8 sm:hidden " @click="toggleNav">
+                    <button class="w-8 sm:hidden nav_toggle" @click="toggleNav">
                         <span
-                            class="w-5 h-[2px] bg-[#4cbbe5] block mb-1 transition-all duration-300 ease-in-out"
+                            class="w-5 h-[2px] nav_toggle bg-[#4cbbe5] block mb-1 transition-all duration-300 ease-in-out"
                             :class="openNav ? 'translate-x-[5px]' : ''"></span>
                         <span
-                            class="w-5 h-[2px] bg-[#4cbbe5] block mb-1 transition-all duration-300 ease-in-out"
+                            class="w-5 h-[2px] nav_toggle bg-[#4cbbe5] block mb-1 transition-all duration-300 ease-in-out"
                             :class="openNav ? 'translate-x-0' : 'translate-x-[5px]'"></span>
                     </button>
                     <div>
@@ -109,33 +113,33 @@
                     </div>
                 </div>
                 <div
-                    class="flex flex-col transition-all z-10 duration-500 ease-in-out sm:relative w-1/2 absolute top-[75%] rounded-tr-2xl rounded-bl-2xl left-3 sm:left-0 sm:bottom-0 bg-[#4cbbe5] sm:bg-transparent dark:text-[#ffffffb3] text-[#333333] sm:flex-row justify-between sm:w-2/5"
+                    class="flex flex-col transition-all z-10 duration-500 ease-in-out sm:relative w-1/2 absolute top-[75%] border-[1px] border-[#4cbbe5] sm:border-0 rounded-tr-2xl rounded-bl-2xl left-3 sm:left-0 sm:bottom-0 bg-white text-[#4cbbe5] dark:bg-[#121212] shadow-[#4cbbe5] sm:bg-transparent dark:text-[#ffffffb3] sm:text-[#333333] sm:flex-row justify-between sm:w-2/5"
                     :class="openNav ? 'showmenu' : 'closemenu'">
                     <a
                         href="#"
-                        class="block p-2 sm:p-0 tracking-wider w-full sm:w-auto before:absolute before:w-full before:rounded-[5rem] before:h-1 overflow-hidden before:bg-[#4cbbe5] before:-bottom-1 relative hover:before:bottom-0">Home</a>
+                        class="block p-2 sm:p-0 tracking-wider w-full sm:w-auto before:absolute before:w-full before:rounded-[5rem] before:h-1 overflow-hidden before:bg-[#4cbbe5] before:-bottom-1 relative hover:scale-105 hover:pl-4 sm:hover:pl-0 transition-all dur ease-linear origin-center sm:hover:before:bottom-0">Home</a>
                     <a
                         href="#"
-                        class="block p-2 sm:p-0 tracking-wider  w-full sm:w-auto before:absolute before:w-full before:rounded-[5rem] before:h-1 overflow-hidden before:bg-[#4cbbe5] before:-bottom-1 relative hover:before:bottom-0">About</a>
+                        class="block p-2 sm:p-0 tracking-wider  w-full sm:w-auto before:absolute before:w-full before:rounded-[5rem] before:h-1 overflow-hidden before:bg-[#4cbbe5] before:-bottom-1 relative hover:scale-105 hover:pl-4 sm:hover:pl-0 transition-all dur ease-linear origin-center sm:hover:before:bottom-0">About</a>
                     <a
                         href="#"
-                        class="block p-2 sm:p-0 tracking-wider  w-full sm:w-auto before:absolute before:w-full before:rounded-[5rem] before:h-1 overflow-hidden before:bg-[#4cbbe5] before:-bottom-1 relative hover:before:bottom-0">Careers</a>
+                        class="block p-2 sm:p-0 tracking-wider  w-full sm:w-auto before:absolute before:w-full before:rounded-[5rem] before:h-1 overflow-hidden before:bg-[#4cbbe5] before:-bottom-1 relative hover:scale-105 hover:pl-4 sm:hover:pl-0 transition-all dur ease-linear origin-center sm:hover:before:bottom-0">Careers</a>
                     <a
                         href="#"
-                        class="block p-2 sm:p-0 tracking-wider  w-full sm:w-auto before:absolute before:w-full before:rounded-[5rem] before:h-1 overflow-hidden before:bg-[#4cbbe5] before:-bottom-1 relative hover:before:bottom-0">Offices</a>
+                        class="block p-2 sm:p-0 tracking-wider  w-full sm:w-auto before:absolute before:w-full before:rounded-[5rem] before:h-1 overflow-hidden before:bg-[#4cbbe5] before:-bottom-1 relative hover:scale-105 hover:pl-4 sm:hover:pl-0 transition-all dur ease-linear origin-center sm:hover:before:bottom-0">Offices</a>
                 </div>
                 <div class="flex items-center gap-4">
                     <button @click="toggleAuth" class="relative">
                         <a
                             href="#"
-                            class="block px-3 pb-[.45rem] pt-[.3rem] border-[#4cbbe5] text-[#4cbbe5] border rounded-3xl">Order Now</a>
+                            class="block auth_toggle px-3 pb-[.45rem] pt-[.3rem] border-[#4cbbe5] text-[#4cbbe5] border rounded-3xl">Order Now</a>
                         <ul
-                            class="absolute top-[63%] dark:bg-[#121212] bg-white z-20 shadow w-full px-5 py-4 transition-all duration-500 border-[#4cbbe5] border border-t-0 rounded-b-full"
+                            class="absolute top-[63%] dark:bg-[#121212] bg-white z-20  w-full  py-4 transition-all duration-500 border-[#4cbbe5] border border-t-0 rounded-b-full"
                             :class="openAuth ? 'showmenu' : 'closemenu'">
-                            <li class="mb-2 primary hover:border-b-[1px] border-cyan-300">
+                            <li class="mb-2 primary hover:scale-110 transition-all duration-300 ease-in-out px-5 border-[#4cbbe5]">
                                 <a href="#">Register</a>
                             </li>
-                            <li class="mb-2 primary hover:border-b-[1px] border-cyan-300">
+                            <li class="mb-2 primary hover:scale-110 transition-all duration-300 ease-in-out px-5 border-[#4cbbe5]">
                                 <a href="#">Sign In</a>
                             </li>
                         </ul>

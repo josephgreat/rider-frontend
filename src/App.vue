@@ -21,7 +21,7 @@ import LandingPage from './components/pages/LandingPage.vue';
 .primary_bg {
   background: #4cbbe5;
 }
-.bg-gradient {
+.bg-gradient:hover {
     background: repeating-linear-gradient(-30deg, #4cbce5 5%, #262626 );
 }
 @keyframes smoothdrop {
